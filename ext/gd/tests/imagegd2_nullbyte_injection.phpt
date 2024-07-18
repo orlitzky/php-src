@@ -2,6 +2,12 @@
 Testing null byte injection in imagegd2
 --EXTENSIONS--
 gd
+--SKIPIF--
+<?php
+    if (!function_exists('imagegd2')){
+        die("skip imagegd2() not available");
+    }
+?>
 --FILE--
 <?php
 $image = imagecreate(1,1);// 1px image
