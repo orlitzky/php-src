@@ -4,8 +4,12 @@ png <--> gd1/gd2 conversion test
 gd
 --SKIPIF--
 <?php
-    if (!GD_BUNDLED && version_compare(GD_VERSION, '2.3.3', '>=')) {
-        die("skip test requires GD 2.3.2 or older");
+    if (!function_exists('imagegd')) {
+        die("skip imagegd() not available");
+    }
+
+    if (!function_exists('imagegd2')) {
+        die("skip imagegd2() not available");
     }
 
     if (!function_exists("imagecreatefrompng") || !function_exists("imagepng")) {

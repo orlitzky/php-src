@@ -8,11 +8,10 @@ gd
             if (version_compare(GD_VERSION, '2.2.0', '<')) {
                 die("skip test requires GD 2.2.0 or higher");
             }
-            if (version_compare(GD_VERSION, '2.3.3', '>=')) {
-                die("skip test requires GD 2.3.2 or older");
-            }
         }
-        if(!function_exists('imagecreatefromgd2')) die('skip imagecreatefromgd2() not available');
+        if (!function_exists('imagecreatefromgd2')) {
+            die('skip imagecreatefromgd2() not available');
+        }
 ?>
 --FILE--
 <?php
